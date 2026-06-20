@@ -1,5 +1,4 @@
 from calculator import add, subtract
-import os
 
 
 def test_add():
