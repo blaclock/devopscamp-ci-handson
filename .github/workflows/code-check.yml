@@ -51,3 +51,16 @@ jobs:
       # pytestでテストを実行
       - name: Run pytest
         run: pytest -v
+
+  python-coverage:
+    name: Run python-coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      # ソースコードのチェックアウト
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      # Python環境をセットアップ
+      - name: Set up Python
+        uses: actions/setup-python@v6
