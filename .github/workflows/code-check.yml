@@ -64,10 +64,12 @@ jobs:
       # Python環境をセットアップ
       - name: Set up Python
         uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
 
       # カバレッジツールをインストール
       - name: Install coverage
-        run: pip install coverage
+        run: pip install coverage pytest
 
       # coverageでカバレッジを計測
       - name: Run coverage
@@ -76,11 +78,3 @@ jobs:
       # カバレッジレポートを生成
       - name: Generate coverage report
         run: coverage report
-
-      # カバレッジレポートをHTML形式で生成
-      - name: Generate coverage report HTML
-        run: coverage html
-
-      # カバレッジレポートを表示
-      - name: Display coverage report
-        run: open htmlcov/index.html
